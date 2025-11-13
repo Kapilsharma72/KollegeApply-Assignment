@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: kollegeapply-server
+    env: node
+    rootDir: server
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 7001
+      - key: MONGO_URL
+        sync: false
+      - key: PIPEDREAM_URL
+        sync: false
+      - key: CORS_ORIGIN
+        value: https://<your-vercel-domain>.vercel.app
+      - key: SKIP_EXTERNALS
+        value: false
+    healthCheckPath: /
