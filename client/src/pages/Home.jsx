@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { getUniversities } from '../api'
+import { resolveUniImage } from '../assets'
 
 export default function Home() {
   const [items, setItems] = useState([])
@@ -63,7 +64,7 @@ export default function Home() {
       <div className="grid" style={{ marginTop: 16 }} ref={gridRef}>
         {filtered.map((u) => (
           <div key={u.slug} className="card">
-            <img src={u.heroImage} alt="campus" style={{ width: '100%', height: 160, objectFit: 'cover', borderRadius: 8 }} />
+            <img src={resolveUniImage(u)} alt="campus" style={{ width: '100%', height: 160, objectFit: 'cover', borderRadius: 8 }} />
             <h3>{u.name}</h3>
             <div className="help">{u.location}</div>
             <p style={{ marginTop: 8 }}>{u.tagline}</p>

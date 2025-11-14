@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { getUniversities, getFees } from '../api'
 import LeadForm from '../components/LeadForm'
 import FeesModal from '../components/FeesModal'
+import { resolveUniImage } from '../assets'
 
 export default function UniversityPage() {
   const { slug } = useParams()
@@ -34,7 +35,7 @@ export default function UniversityPage() {
   return (
     <div className="container" style={{ padding: '24px 0' }}>
       <section className="hero">
-        <img src={uni.heroImage} alt="campus" />
+        <img src={resolveUniImage(uni)} alt="campus" />
         <div className="copy">
           <h1>{uni.name}</h1>
           <div className="help">{uni.location}</div>

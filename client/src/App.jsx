@@ -19,7 +19,7 @@ export default function App() {
 
       <footer className="site-footer">
         <div className="container">
-          <p>© {new Date().getFullYear()} KollegeApply – Demo assignment build</p>
+          <p>© {new Date().getFullYear()} KollegeApply – assignment build</p>
         </div>
       </footer>
     </div>

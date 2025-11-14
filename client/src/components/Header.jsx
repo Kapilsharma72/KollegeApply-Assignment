@@ -60,14 +60,17 @@ export default function Header(){
           <div className="drawer-panel" onClick={(e) => e.stopPropagation()}>
             <button className="close" onClick={() => setDrawer(false)}>✕</button>
             <h3>Explore</h3>
-            <div className="drawer-section">
-              {items.map(u => (
-                <button key={u.slug} className="menu-item" onClick={() => { setDrawer(false); nav(`/u/${u.slug}`) }}>
-                  <div className="title">{u.name}</div>
-                  <div className="sub">{u.location}</div>
-                </button>
-              ))}
-            </div>
+            <details className="collapsible" open>
+              <summary>Colleges</summary>
+              <div className="drawer-section">
+                {items.map(u => (
+                  <button key={u.slug} className="menu-item" onClick={() => { setDrawer(false); nav(`/u/${u.slug}`) }}>
+                    <div className="title">{u.name}</div>
+                    <div className="sub">{u.location}</div>
+                  </button>
+                ))}
+              </div>
+            </details>
             <div className="drawer-actions">
               <a className="chip" href="tel:+919999999999">Call</a>
               <a className="chip" href="mailto:admissions@example.com">Email</a>
